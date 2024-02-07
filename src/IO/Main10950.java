@@ -1,7 +1,9 @@
+package IO;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Main10950 {
     public static void main(String[] args) throws IOException {
         try (
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -22,3 +24,13 @@ public class Main {
         }
     }
 }
+/**
+ * 입력값      출력값
+ * 5
+ * 1 1           2
+ * 2 3           5
+ * 3 4           7
+ * 9 8           17
+ * 5 2           7
+ *
+ * */
