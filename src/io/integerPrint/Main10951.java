@@ -1,4 +1,4 @@
-package IO;
+package io.integerPrint;
 
 import java.io.*;
 import java.util.StringTokenizer;
