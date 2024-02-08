@@ -18,3 +18,12 @@ public class Main11720 {
         System.out.print(result);
     }
 }
+/**
+ *입력으로 주어진 숫자 N개의 합을 출력한다.
+ *
+ * 입력         출력
+ * 5
+ * 54321      15
+ *
+ *
+ * */
