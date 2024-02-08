@@ -1,4 +1,4 @@
-package io.integerPrint;
+package io.basicPrint1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,3 +18,13 @@ public class Main11022 {
         }
     }
 }
+
+/**
+ * 입력값                  출력값
+ * 5
+ * 1 1                 Case #1: 1 + 1 = 2
+ * 2 3                 Case #2: 2 + 3 = 5
+ * 3 4                 Case #3: 3 + 4 = 7
+ * 9 8                 Case #4: 9 + 8 = 17
+ * 5 2                 Case #5: 5 + 2 = 7
+ * */
