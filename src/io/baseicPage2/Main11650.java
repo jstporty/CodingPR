@@ -28,7 +28,7 @@ public class Main11650 {
                     return o1[0] - o2[0];
             }
         });
-        var b = new StringBuilder();
+
         for (int i = 0; i < n; i++) {
             System.out.println(numbers[i][0] + " " + numbers[i][1]);
         }
