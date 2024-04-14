@@ -18,26 +18,33 @@ public class Main11724 {
         line = Integer.parseInt(st.nextToken());
         arr = new int[node + 1][node + 1];
         visted = new boolean[node + 1];
+
+
         for (int i = 0; i < line; i++) {
             StringTokenizer value = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(value.nextToken());
             int b = Integer.parseInt(value.nextToken());
             arr[a][b] = arr[b][a] = 1;
-            if (!visted[i]) {
-                dfs(a);
+
+
+        }
+        for (int i = 1; i <= node; i++) {
+                if (!visted[i]) {
+                    dfs(i);
+                    count++;
             }
         }
         System.out.print(count);
     }
 
     static void dfs(int start) {
-        for (int i = 0; i <= node; i++) {
-            visted[start] = true;
+        visted[start] = true;
 
+        for (int i = 0; i <= node; i++) {
             if (arr[start][i] == 1 && !visted[i]) {
                 dfs(i);
-                count++;
             }
+
         }
     }
 
