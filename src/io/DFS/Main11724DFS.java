@@ -5,47 +5,47 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main11724 {
-    static int node, line;
-    static int arr[][];
-    static boolean visted[];
-    static int count;
+public class Main11724DFS {
+
+    static int node, n;
+    static boolean[] visted;
+    static int[][] arr;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+
         node = Integer.parseInt(st.nextToken());
-        line = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken());
         arr = new int[node + 1][node + 1];
         visted = new boolean[node + 1];
 
-
-        for (int i = 0; i < line; i++) {
-            StringTokenizer value = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(value.nextToken());
-            int b = Integer.parseInt(value.nextToken());
+        for (int i = 0; i < n; i++) {
+            StringTokenizer aa = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(aa.nextToken());
+            int b = Integer.parseInt(aa.nextToken());
             arr[a][b] = arr[b][a] = 1;
-
-
         }
+
+        int count = 0;
         for (int i = 1; i <= node; i++) {
             if (!visted[i]) {
                 dfs(i);
                 count++;
             }
+
         }
         System.out.print(count);
     }
 
-    static void dfs(int start) {
-        visted[start] = true;
-
-        for (int i = 0; i <= node; i++) {
-            if (arr[start][i] == 1 && !visted[i]) {
+    public static void dfs(int pram) {
+        visted[pram] = true;
+        for (int i = 0; i < node; i++) {
+            if (arr[pram][i] == 1 && !visted[i]) {
                 dfs(i);
             }
-
         }
     }
+
 
 }
