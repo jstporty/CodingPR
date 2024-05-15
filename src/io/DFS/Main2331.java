@@ -3,9 +3,7 @@ package io.DFS;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Main2331 {
     static int first;
@@ -18,22 +16,34 @@ public class Main2331 {
         String a = st.nextToken();
         int b = Integer.parseInt(st.nextToken());
 
-        List<Integer> result = new ArrayList<>();
-        Integer[] visted = new Integer[1000];
-        while (true) {
+        List<Integer> numList = new ArrayList<>();
+        boolean flag = true;
+        int compareNum = 0;
+        numList.add(Integer.valueOf(a));
+        while (flag) {
+            int c = 0;
             String[] parts = a.split("");
-            first = (int) Math.pow(Integer.parseInt(parts[0]), b);
-            second = (int) Math.pow(Integer.parseInt(parts[1]), b);
-            a = String.valueOf(first + second);
-            result.add(first + second);
 
-            if (String.valueOf(first + second).equals(fixed)) {
-                break;
+            for (String part : parts) {
+                c += (int)Math.pow(Integer.parseInt(part),b);
             }
 
+//            first = (int) Math.pow(Integer.parseInt(parts[0]), b);
+//            second = (int) Math.pow(Integer.parseInt(parts[1]), b);
+            a = String.valueOf(c);
 
+
+            for (Integer num : numList) {
+                if (c == num) {
+                    flag = false;
+                    compareNum = num;
+                    break;
+                }
+            }
+            if (flag) {
+                numList.add(c);
+            }
         }
-
-        System.out.println(result.size());
+        System.out.println(numList.indexOf(compareNum) );
     }
 }
