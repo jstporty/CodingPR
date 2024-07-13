@@ -20,6 +20,8 @@ public class Main11725 {
 
         for (int i = 1; i <= node; i++) {
             arr[i] = new ArrayList<>();
+
+
         }
 
         for (int i = 1; i < node; i++) {
